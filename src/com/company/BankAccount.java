@@ -7,6 +7,20 @@ public class BankAccount {
     private String email;
     private String phoneNumber;
 
+    public void deposit(double depositAmount) {
+        this.balance += depositAmount;
+        System.out.println("Deposit of " + depositAmount + " made. New balance is " + this.balance);
+    }
+
+    public void withdraw(double withdrawalAmount) {
+        if (this.balance - withdrawalAmount >= 0) {
+            this.balance -= withdrawalAmount;
+            System.out.println("Withdraw of " + withdrawalAmount + " processed. Remaining balance = " + this.balance);
+        } else {
+            System.out.println("Only " + this.balance + "available. Withdrawal not processed.");
+        }
+    }
+
     public String getAccountNumber() {
         return accountNumber;
     }
